@@ -83,6 +83,20 @@ void MainWindow::set_bkgnd()
     setCentralWidget(widget);
 }
 
+void MainWindow::resizeEvent(QResizeEvent* evt)
+{
+    QPixmap bkgnd("/home/ciel2024/amir_sbiai_eu2/background.jpeg");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+
+    QPalette palette;
+
+    palette.setBrush(QPalette::Background, bkgnd);
+    this->setPalette(palette);
+
+    QMainWindow::resizeEvent(evt); // call inherited implementation
+}
+
+
 void MainWindow::Drapeau_ALLEMAGNE() {
     Drapeau *D = new Drapeau("Black", "red", "gold", "vertical", "Allemagne");
 }
