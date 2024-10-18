@@ -86,7 +86,8 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
-    //void resizeEvent(QResizeEvent* evt) override;
+protected:
+    void resizeEvent(QResizeEvent* evt) override;
 };
 
 #endif // MAINWINDOW_H
